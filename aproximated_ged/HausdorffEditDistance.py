@@ -67,7 +67,8 @@ class HausdorffEditDistance(GraphEditDistance):
         d2 = self.node_insertion(g2) + self.edge_insertion(g2.edge.values())/2
 
         # Substitution
-        cs = self.node_substitution(g1, g2)
+        #cs = self.node_substitution(g1, g2)
+        cs= np.zeros((len(g1), len(g2)))
 
         # edges can be text-named
         g1edges = list(g1.edge.keys())

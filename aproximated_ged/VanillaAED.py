@@ -54,7 +54,14 @@ class VanillaAED(AproximatedEditDistance):
         values2 = [v for k, v in g2.nodes(data=True)]
         v2 = [list(chain.from_iterable(l.values())) for l in values2]
 
+        print("v1")
+        print(g1.nodes())
+        print(len(v1))
+        print(len(v2))
+
         node_dist = cdist(np.array(v1), np.array(v2), metric=self.metric)
+        print("finish")
+        print(node_dist)
 
         return node_dist
 

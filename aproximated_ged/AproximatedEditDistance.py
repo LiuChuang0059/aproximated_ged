@@ -67,7 +67,8 @@ class AproximatedEditDistance(GraphEditDistance):
         np.fill_diagonal(cost_matrix[0:len(g1), len(g2):], self.node_deletion(g2)+self.edge_deletion(g2.edge.values()))
 
         # Substitution
-        node_dist = self.node_substitution(g1, g2)
+        #node_dist = self.node_substitution(g1, g2)
+        node_dist = np.zeros((len(g1), len(g2)))
 
         i1 = 0
         for k1 in g1.nodes():
